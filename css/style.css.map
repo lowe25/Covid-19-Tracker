@@ -1,0 +1,15 @@
+{
+    "version": 3,
+    "mappings": "ACAA,AAAA,CAAC,CAAA;EACG,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;CACb;;AIHD,AAAA,KAAK,CAAC;EACF,WAAW,EAAE,iBAAiB;EAC9B,eAAe,EAAE,QAAQ;EACzB,KAAK,EAAE,IAAI;CACZ;;AAED,AAAA,EAAE,EAAE,EAAE,CAAC;EACL,MAAM,EAAE,iBAAiB;EACzB,UAAU,EAAE,IAAI;EAChB,OAAO,EAAE,GAAG;CACb",
+    "sources": [
+        "../sass/style.scss",
+        "../sass/base/_reset.scss",
+        "../sass/base/_mixins.scss",
+        "../sass/components/_nav.scss",
+        "../sass/components/_footer.scss",
+        "../sass/components/_tbl-country.scss",
+        "../sass/pages/_homePage.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}
