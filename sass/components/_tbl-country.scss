@@ -12,6 +12,12 @@ table {
     padding: 8px;
   }
 
+  .tbl-list{
+    td,th{
+      width: 200px;
+    }
+  }
+
   @mixin table-design {
     
   }

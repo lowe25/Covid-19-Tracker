@@ -29,6 +29,10 @@ td, th {
   padding: 8px;
 }
 
+.tbl-list td, .tbl-list th {
+  width: 200px;
+}
+
 .container {
   height: 100vh;
 }
@@ -87,5 +91,9 @@ td, th {
 .container .tbl-container .tbl-h1 {
   text-align: center;
   padding-bottom: 20px;
+}
+
+.container .tbl-container .tbl-list {
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
