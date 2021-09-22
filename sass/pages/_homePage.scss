@@ -1,0 +1,52 @@
+.container {
+    height: 100vh;
+  .box-container {
+    @include flex;
+    gap: 20px;
+    padding: 50px 50px;
+    .global-status,
+    .selected-status {
+      @include box;
+      .h1-status {
+        text-align: center;
+      }
+      ul {
+        list-style: none;
+        padding: 20px;
+      }
+      li{
+        padding: 5px;
+    }
+    }
+    .global-status {
+      ul {
+        padding: 40px;
+      }
+      li{
+          padding: 5px;
+      }
+      .tbl-global{
+        @include table-design;
+      }
+    }
+    .selected-status {
+      .txt-form {
+        @include flex;
+        padding: 10px;
+        .txt-search {
+          @include text-default;
+        }
+      }
+    }
+  }
+
+  //Table
+  .tbl-container {
+    .tbl-h1 {
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    .tbl-country {
+    }
+  }
+}

@@ -3,7 +3,21 @@
   padding: 0;
 }
 
+header nav {
+  height: 60px;
+  background-color: #131516;
+  color: #ffffff;
+  display: grid;
+  align-items: center;
+}
+
+header nav h1 {
+  text-align: center;
+}
+
 table {
+  display: grid;
+  justify-content: center;
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
@@ -13,5 +27,65 @@ td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+}
+
+.container {
+  height: 100vh;
+}
+
+.container .box-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px 50px;
+}
+
+.container .box-container .global-status,
+.container .box-container .selected-status {
+  min-height: 200px;
+  min-width: 550px;
+  border: 2px solid #000000;
+  padding: 20px;
+}
+
+.container .box-container .global-status .h1-status,
+.container .box-container .selected-status .h1-status {
+  text-align: center;
+}
+
+.container .box-container .global-status ul,
+.container .box-container .selected-status ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.container .box-container .global-status li,
+.container .box-container .selected-status li {
+  padding: 5px;
+}
+
+.container .box-container .global-status ul {
+  padding: 40px;
+}
+
+.container .box-container .global-status li {
+  padding: 5px;
+}
+
+.container .box-container .selected-status .txt-form {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.container .box-container .selected-status .txt-form .txt-search {
+  height: 30px;
+  width: 200px;
+  border: 2px solid #000000;
+}
+
+.container .tbl-container .tbl-h1 {
+  text-align: center;
+  padding-bottom: 20px;
 }
 /*# sourceMappingURL=style.css.map */

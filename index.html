@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,52 +8,99 @@
     <title>COVID-19 Tracker</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <div class="container">
-      <header>
-          <nav>
-              <h1>COVID-19 Statistics</h1>
-          </nav>
-      </header>
+        <header>
+            <nav>
+                <h1>COVID-19 Statistics</h1>
+            </nav>
+        </header>
 
-      <div class="box-container">
-          <div class="global-status">
-              <h1 class="h1-status">Global Covid-19 Status:</h1>
-              <ul>
-                  <li>Confirmed Cases:</li>
-                  <li>Recoveries:</li>
-                  <li>Deaths:</li>
-              </ul>
-          </div><!--Global Status-->
-          
-          <div class="selected-status">
-            <h1 class="h1-status">Global Covid-19 Status:</h1>
-            <ul>
-                <li>Confirmed Cases:</li>
-                <li>Recoveries:</li>
-                <li>Deaths:</li>
-            </ul>
-          </div><!--Selected Status-->
-      </div><!--Box Status-->
+        <div class="box-container">
+            <div class="global-status">
+                <h1 class="h1-status">Global Covid-19 Status:</h1>
+                <table class="tbl-global">
+                    <tr>
+                        <th>Confirmed Cases:</th>
+                        <th>New Cases:</th>
+                        <th>Total Cases:</th>
+                        <th>Recoveries</th>
+                        <th>Total Deaths:</th>
+                        <th>New Deaths:</th>
+                    </tr>
+                    <tr>
+                        <td id="confirmed"></td>
+                        <td id="new-case"></td>
+                        <td id="total-case"></td>
+                        <td id="recoveries"></td>
+                        <td id="total-deaths"></td>
+                        <td id="new-deaths"></td>
+                    </tr>
+                </table>
+            </div>
+            <!--Global Status-->
 
-      <div class="tbl-container">
-          <h1 class="tbl-h1">COVID-19 Statistics By Country:</h1>
-        <div class="tbl-country">
-            <table>
-                <tr>
-                  <th>Total Cases:</th>
-                  <th>New Cases:</th>
-                  <th>Total Deaths:</th>
-                  <th>New Deaths:</th>
-                  <th>Total Recoveries:</th>
-                  <th>New Recoveries:</th>
-                </tr>
-              </table>
-        </div><!--tbl country-->
-      </div><!--Table Container-->
-      <footer class="footer">
-          <h1>All Rights Reserved</h1>
-      </footer>
-    </div><!--Container-->
+            <div class="selected-status">
+                <h1 class="h1-status">Country Covid-19 Status:</h1>
+                <div class="txt-form">
+                    <input type="text" class="txt-search" id="country-src"oninput="searchCountryFetch()" placeholder="Search Country">
+                </div>
+                <table class="tbl-country">
+                    <tr>
+                        <th>Confirmed Cases:</th>
+                        <th>New Cases:</th>
+                        <th>Total Cases:</th>
+                        <th>Recoveries</th>
+                        <th>Total Deaths:</th>
+                        <th>New Deaths:</th>
+                    </tr>
+                    <tr>
+                        <td id="selected-confirmed"></td>
+                        <td id="selected-new-case"></td>
+                        <td id="selected-total-case"></td>
+                        <td id="selected-recoveries"></td>
+                        <td id="selected-total-deaths"></td>
+                        <td id="selected-new-deaths"></td>
+                    </tr>
+                </table>
+            </div>
+            <!--Selected Status-->
+        </div>
+        <!--Box Status-->
+
+        <div class="tbl-container">
+            <h1 class="tbl-h1">COVID-19 Statistics By Country:</h1>
+            <div class="tbl-selected">
+                <table class="tbl-list">
+                    <tr>
+                        <th>Country:</th>
+                        <th>Total Cases:</th>
+                        <th>New Cases:</th>
+                        <th>Total Deaths:</th>
+                        <th>New Deaths:</th>
+                        <th>Total Recoveries:</th>
+                        <th>New Recoveries:</th>
+                    </tr>
+                    <tr>
+                        <td class="country"></td>
+                        <td class="total-cases"></td>
+                        <td class="new-cases"></td>
+                        <td class="total-deaths"></td>
+                        <td class="new-deaths"></td>
+                        <td class="total-recover"></td>
+                        <td class="new-reco"></td>
+                    </tr>
+                </table>
+            </div>
+            <!--tbl country-->
+            <h1 id="tite"></h1>
+        </div>
+        <!--Table Container-->
+
+    </div>
+    <!--Container-->
+    <script src="js/index.js"></script>
 </body>
+
 </html>

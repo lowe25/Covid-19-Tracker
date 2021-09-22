@@ -1,8 +1,11 @@
 @import '../sass/base/reset';
 @import '../sass/base/mixins';
+@import '../sass/base/color';
 
-@import '../sass/components/nav';
-@import '../sass/components/footer';
+@import '../sass/layout/nav';
+@import '../sass/layout/footer';
 @import '../sass/components/tbl-country';
+@import '../sass/components/box';
+@import '../sass/components/textBox';
 
 @import '../sass/pages/homePage';

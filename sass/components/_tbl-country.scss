@@ -1,4 +1,6 @@
 table {
+    display: grid;
+    justify-content: center;
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
@@ -8,4 +10,8 @@ table {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+  }
+
+  @mixin table-design {
+    
   }

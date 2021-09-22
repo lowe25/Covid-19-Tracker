@@ -1,0 +1,12 @@
+header {
+  nav {
+    height: 60px;
+    background-color: $bg-color;
+    color: $txt-color2;
+    display: grid;
+    align-items: center;
+    h1 {
+      text-align: center;
+    }
+  }
+}
