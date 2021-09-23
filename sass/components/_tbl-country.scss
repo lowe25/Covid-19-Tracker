@@ -16,6 +16,9 @@ table {
     td,th{
       width: 200px;
     }
+    tr:hover{
+      background-color: red;
+    }
   }
 
   @mixin table-design {

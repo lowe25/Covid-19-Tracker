@@ -18,21 +18,24 @@ var GlobalconfirmedtotalDeaths = document.getElementById("total-deaths");
 var GlobalconfirmednewDeaths = document.getElementById("new-deaths");
 
 //Country Box
-//var txtSearch = document.getElementById("country-src").value;
 var Countryconfirmed = document.getElementById("selected-confirmed");
 var CountryconfirmednewCase = document.getElementById("selected-new-case");
 var CountryconfirmedtotalCase = document.getElementById("selected-total-case");
 var Countryconfirmedrecoveries = document.getElementById("selected-recoveries");
-var CountryconfirmedtotalDeaths = document.getElementById(
-  "selected-total-deaths"
-);
+var CountryconfirmedtotalDeaths = document.getElementById("selected-total-deaths");
 var CountryconfirmednewDeaths = document.getElementById("selected-new-deaths");
-var txtSearch ="Canada";
+
+//TextBoxes
+var txtSearch = document.getElementById("country-src").value;
+//Buttons
+var btn = document.getElementById("btn-search");
+btn.addEventListener("click", searchCountryFetch);
+
 const apiPostTbl = "https://covid-193.p.rapidapi.com/statistics";
-const apiPostSearch = `https://covid-193.p.rapidapi.com/statistics?country=${txtSearch}`;
 const globalStatus = "https://covid-193.p.rapidapi.com/statistics?country=all";
-const table = document.querySelector(".betlog");
+const table = document.querySelector(".tbl-list");
 var row;
+
 function tblFill() {
   fetch(apiPostTbl, {
     method: "GET",
@@ -47,25 +50,16 @@ function tblFill() {
       }
     })
     .then((response) => {
-      // console.log(response);
-      /*       
-      console.log(response)
-        country.innerHTML = `${d.country}`;
-        totalCase.innerHTML = `${d.cases.total}`;
-        newCase.innerHTML = `${d.cases.new}`;
-        totalDeaths.innerHTML = `${d.deaths.total}`;
-        newDeaths.innerHTML = `${d.deaths.new}`;
-        totalReco.innerHTML = `${d.cases.total}`;
-        newReco.innerHTML = `${d.cases.new}`;
-      */
       for (const d of response.response) {
-        console.log(response)
+        var det = d.deaths.total;
+        //Total Cases
+        let t = d.cases.total;
+        //Total Cases
+        const casesTotal = t.toLocaleString();
        row = `<tr>
               <td>${d.country}</td>
-              <td>${d.cases.total}</td>
-              <td>${d.cases.new}</td>
+              <td>${casesTotal}</td>
               <td>${d.deaths.total}</td>
-              <td>${d.deaths.new}</td>
               <td>${d.cases.recovered}</td>
               </tr>
         `
@@ -77,8 +71,9 @@ function tblFill() {
     });
 }
 
-//Search Country
+//Search Countr
 function searchCountryFetch() {
+  const apiPostSearch = `https://covid-193.p.rapidapi.com/statistics?country=${txtSearch}`;
   fetch(apiPostSearch, {
     method: "GET",
     headers: {
@@ -92,20 +87,25 @@ function searchCountryFetch() {
       }
     })
     .then((response) => {
-      console.log(response);
-      for (const d of response.response) {
-        Countryconfirmed.innerHTML = `${d.cases.active}`;
-        CountryconfirmednewCase.innerHTML = `${d.cases.new}`;
-        CountryconfirmedtotalCase.innerHTML = `${d.cases.total}`;
-        Countryconfirmedrecoveries.innerHTML = `${d.cases.recovered}`;
-        CountryconfirmedtotalDeaths.innerHTML = `${d.deaths.total}`;
-        CountryconfirmednewDeaths.innerHTML = `${d.deaths.new}`;
-      }
+      console.log(response)
+      searchResults(response);
     })
     .catch((err) => {
       console.error(err);
     });
 }
+
+function searchResults(data){
+  for (const d of data.response) {
+    Countryconfirmed.innerHTML = `${d.cases.active}`;
+    CountryconfirmednewCase.innerHTML = `${d.cases.new}`;
+    CountryconfirmedtotalCase.innerHTML = `${d.cases.total}`;
+    Countryconfirmedrecoveries.innerHTML = `${d.cases.recovered}`;
+    CountryconfirmedtotalDeaths.innerHTML = `${d.deaths.total}`;
+    CountryconfirmednewDeaths.innerHTML = `${d.deaths.new}`;
+  }
+}
+
 //Global Status Box
 function globalStatusFunc() {
   fetch(globalStatus, {
@@ -123,18 +123,32 @@ function globalStatusFunc() {
     .then((response) => {
       // console.log(response);
       for (const d of response.response) {
-        Globalconfirmed.innerHTML = `${d.cases.active}`;
-        GlobalconfirmednewCase.innerHTML = `${d.cases.new}`;
-        GlobalconfirmedtotalCase.innerHTML = `${d.cases.total}`;
-        Globalconfirmedrecoveries.innerHTML = `${d.cases.recovered}`;
-        GlobalconfirmedtotalDeaths.innerHTML = `${d.deaths.total}`;
-        GlobalconfirmednewDeaths.innerHTML = `${d.deaths.new}`;
+        let t = d.cases.active;
+        let nc = d.cases.new;
+        let tc = d.cases.total;
+        let rec = d.cases.recovered;
+        let td = d.deaths.total;
+        let nd = d.deaths.new;
+        const confirmedCases = t.toLocaleString();
+        const newCases = nc.toLocaleString();
+        const totalCases = tc.toLocaleString();
+        const recovered = rec.toLocaleString();
+        const totalDeaths = td.toLocaleString();
+        const newDeaths = nd.toLocaleString();
+        
+        Globalconfirmed.innerHTML = `${confirmedCases}`;
+        GlobalconfirmednewCase.innerHTML = `${newCases}`;
+        GlobalconfirmedtotalCase.innerHTML = `${totalCases}`;
+        Globalconfirmedrecoveries.innerHTML = `${recovered}`;
+        GlobalconfirmedtotalDeaths.innerHTML = `${totalDeaths}`;
+        GlobalconfirmednewDeaths.innerHTML = `${newDeaths}`;
       }
     })
     .catch((err) => {
       console.error(err);
     });
 }
+
 
 tblFill();
 searchCountryFetch();

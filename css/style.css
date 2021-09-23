@@ -33,6 +33,10 @@ td, th {
   width: 200px;
 }
 
+.tbl-list tr:hover {
+  background-color: red;
+}
+
 .container {
   height: 100vh;
 }
@@ -68,6 +72,11 @@ td, th {
   padding: 5px;
 }
 
+.container .box-container .global-status {
+  display: grid;
+  align-items: center;
+}
+
 .container .box-container .global-status ul {
   padding: 40px;
 }
@@ -80,6 +89,11 @@ td, th {
   display: flex;
   justify-content: center;
   padding: 10px;
+  gap: 10px;
+}
+
+.container .box-container .selected-status .txt-form .btn-search {
+  width: 150px;
 }
 
 .container .box-container .selected-status .txt-form .txt-search {
