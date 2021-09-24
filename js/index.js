@@ -26,10 +26,11 @@ var Countryconfirmedrecoveries = document.getElementById("selected-recoveries");
 var CountryconfirmedtotalDeaths = document.getElementById(
   "selected-total-deaths"
 );
-
 var CountryconfirmednewDeaths = document.getElementById("selected-new-deaths");
+
 var btn = document.getElementById("btn-search");
 btn.addEventListener("click", getCountry);
+btn.addEventListener("click", refreshPage);
 /*
 second api
 		"x-rapidapi-host": "vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com",
@@ -38,9 +39,9 @@ const apiPostTbl = "https://covid-193.p.rapidapi.com/statistics";
 const globalStatus = "https://covid-193.p.rapidapi.com/statistics?country=all";
 const table = document.querySelector(".tbl-list");
 var row;
-//var txtSearch = "Canada";
-const apiPostSearch = `https://covid-193.p.rapidapi.com/statistics?country=${txtSearch}`;
+
 async function getCountry(){
+  const apiPostSearch = `https://covid-193.p.rapidapi.com/statistics?country=${txtSearch}`;
   try{
     const response = await fetch(apiPostSearch,{
       method: "GET",
@@ -59,8 +60,13 @@ async function getCountry(){
   }
 }
 
+function refreshPage(){
+  window.location.reload();
+}
+
 function printCountry(response){
   for (const d of response.response) {
+    console.log(response)
     Countryconfirmed.innerHTML = `${d.cases.active}`;
     CountryconfirmednewCase.innerHTML = `${d.cases.new}`;
     CountryconfirmedtotalCase.innerHTML = `${d.cases.total}`;
