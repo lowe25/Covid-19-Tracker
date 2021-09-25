@@ -39,13 +39,17 @@
                     </tr>
                 </table>
             </div>
+
+            
             <!--Global Status-->
 
+            
             <div class="selected-status">
                 <h1 class="h1-status">Country Covid-19 Status:</h1>
                 <div class="txt-form">
                     <input type="text" class="txt-search" id="country-src" placeholder="Search Country">
-                    <button id="btn-search">Search</button>
+                  
+                     <button type="submit"id="btn-search" >Search</button>
                 </div>
                 <table class="tbl-country">
                     <tr>
@@ -75,13 +79,10 @@
             <div class="tbl-selected">
                 <table class="tbl-list">
                     <tr>
-                        <th>Country:</th>
+                        <th onclick="sortCountry(0)">Country:</th>
                         <th>Total Cases:</th>
                         <th>Total Deaths:</th>
                         <th>Recoveries:</th>
-                    </tr>
-                    <tr>
-                     <tbody class="country-cases"></tbody>
                     </tr>
                 </table>
             </div>
@@ -89,7 +90,9 @@
             <h1 id="tite"></h1>
         </div>
         <!--Table Container-->
-
+        <footer>
+            <p>All Rights Reserved</p>
+        </footer>
     </div>
     <!--Container-->
     <script src="js/index.js"></script>

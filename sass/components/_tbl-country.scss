@@ -1,26 +1,7 @@
-table {
-    display: grid;
-    justify-content: center;
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-
-  .tbl-list{
-    td,th{
-      width: 200px;
-    }
-    tr:hover{
-      background-color: red;
-    }
-  }
-
-  @mixin table-design {
-    
-  }
+.tbl-global,
+.tbl-country {
+  @include table-design;
+}
+.tbl-list{
+@include table-design;
+}

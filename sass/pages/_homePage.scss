@@ -1,4 +1,5 @@
 .container {
+  font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
   .box-container {
     @include flex;
@@ -16,6 +17,9 @@
       }
       li{
         padding: 5px;
+    }
+    .tbl-country{
+     @include table-design;
     }
     }
     .global-status {
@@ -36,8 +40,9 @@
         @include flex;
         padding: 10px;
         gap: 10px;
-        .btn-search{
+        .btn{
           width: 150px;
+          cursor: pointer;
         }
         .txt-search {
           @include text-default;
@@ -48,12 +53,26 @@
 
   //Table
   .tbl-container {
+    display: grid;
+    justify-content: center;
     .tbl-h1 {
       text-align: center;
       padding-bottom: 20px;
     }
     .tbl-list{
-      width: 100%;
+     @include table-design2;
+    }
+  }
+}
+
+@media screen and (max-width:480px) {
+  .container{
+    .box-container{
+     flex-direction: column;
+     .tbl-global,
+     .tbl-country{
+      @include table-design;
+     }
     }
   }
 }
