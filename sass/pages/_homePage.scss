@@ -5,9 +5,7 @@
     @include flex;
     gap: 20px;
     padding: 50px 50px;
-    .global-status,
-    .selected-status {
-      @include box;
+    .global-status {
       .h1-status {
         text-align: center;
       }
@@ -18,35 +16,12 @@
       li{
         padding: 5px;
     }
-    .tbl-country{
-     @include table-design;
-    }
     }
     .global-status {
       display: grid;
       align-items: center;
-      ul {
-        padding: 40px;
-      }
-      li{
-          padding: 5px;
-      }
       .tbl-global{
         @include table-design;
-      }
-    }
-    .selected-status {
-      .txt-form {
-        @include flex;
-        padding: 10px;
-        gap: 10px;
-        .btn{
-          width: 150px;
-          cursor: pointer;
-        }
-        .txt-search {
-          @include text-default;
-        }
       }
     }
   }
@@ -55,24 +30,13 @@
   .tbl-container {
     display: grid;
     justify-content: center;
-    .tbl-h1 {
-      text-align: center;
-      padding-bottom: 20px;
-    }
     .tbl-list{
-     @include table-design2;
+     @include table-design;
     }
   }
 }
 
 @media screen and (max-width:480px) {
   .container{
-    .box-container{
-     flex-direction: column;
-     .tbl-global,
-     .tbl-country{
-      @include table-design;
-     }
-    }
   }
 }

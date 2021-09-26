@@ -5,6 +5,7 @@
 
 header nav {
   height: 60px;
+  min-width: 200px;
   background-color: #131516;
   color: #ffffff;
   display: grid;
@@ -24,48 +25,37 @@ footer {
   color: #ffffff;
 }
 
-.tbl-global,
-.tbl-country {
+.tbl-cases,
+.tbl-list {
+  font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
-  padding-bottom: 10px;
 }
 
-.tbl-global td,
-.tbl-global th,
-.tbl-country td,
-.tbl-country th {
+td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
 
-.tbl-global th,
-.tbl-country th {
-  background-color: crimson;
-  color: #ffffff;
-  font-size: 12px;
-  cursor: pointer;
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
 
 .tbl-list {
+  font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
-  padding-bottom: 10px;
 }
 
-.tbl-list td,
-.tbl-list th {
+.tbl-list td, .tbl-list th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
 
-.tbl-list th {
-  background-color: crimson;
-  color: #ffffff;
-  font-size: 12px;
-  cursor: pointer;
+.tbl-list tr:nth-child(even) {
+  background-color: #dddddd;
 }
 
 .container {
@@ -80,52 +70,17 @@ footer {
   padding: 50px 50px;
 }
 
-.container .box-container .global-status,
-.container .box-container .selected-status {
-  min-height: 150px;
-  min-width: 250px;
-  border: 2px solid #000000;
-  padding: 20px;
-}
-
-.container .box-container .global-status .h1-status,
-.container .box-container .selected-status .h1-status {
+.container .box-container .global-status .h1-status {
   text-align: center;
 }
 
-.container .box-container .global-status ul,
-.container .box-container .selected-status ul {
+.container .box-container .global-status ul {
   list-style: none;
   padding: 20px;
 }
 
-.container .box-container .global-status li,
-.container .box-container .selected-status li {
+.container .box-container .global-status li {
   padding: 5px;
-}
-
-.container .box-container .global-status .tbl-country,
-.container .box-container .selected-status .tbl-country {
-  border-collapse: collapse;
-  width: 100%;
-  padding-bottom: 10px;
-}
-
-.container .box-container .global-status .tbl-country td,
-.container .box-container .global-status .tbl-country th,
-.container .box-container .selected-status .tbl-country td,
-.container .box-container .selected-status .tbl-country th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-.container .box-container .global-status .tbl-country th,
-.container .box-container .selected-status .tbl-country th {
-  background-color: crimson;
-  color: #ffffff;
-  font-size: 12px;
-  cursor: pointer;
 }
 
 .container .box-container .global-status {
@@ -133,18 +88,10 @@ footer {
   align-items: center;
 }
 
-.container .box-container .global-status ul {
-  padding: 40px;
-}
-
-.container .box-container .global-status li {
-  padding: 5px;
-}
-
 .container .box-container .global-status .tbl-global {
   border-collapse: collapse;
-  width: 100%;
   padding-bottom: 10px;
+  width: 100%;
 }
 
 .container .box-container .global-status .tbl-global td,
@@ -161,36 +108,14 @@ footer {
   cursor: pointer;
 }
 
-.container .box-container .selected-status .txt-form {
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  gap: 10px;
-}
-
-.container .box-container .selected-status .txt-form .btn {
-  width: 150px;
-  cursor: pointer;
-}
-
-.container .box-container .selected-status .txt-form .txt-search {
-  height: 30px;
-  width: 200px;
-  border: 2px solid #000000;
-}
-
 .container .tbl-container {
   display: grid;
   justify-content: center;
 }
 
-.container .tbl-container .tbl-h1 {
-  text-align: center;
-  padding-bottom: 20px;
-}
-
 .container .tbl-container .tbl-list {
   border-collapse: collapse;
+  padding-bottom: 10px;
   width: 100%;
 }
 
@@ -206,32 +131,5 @@ footer {
   color: #ffffff;
   font-size: 12px;
   cursor: pointer;
-}
-
-@media screen and (max-width: 480px) {
-  .container .box-container {
-    flex-direction: column;
-  }
-  .container .box-container .tbl-global,
-  .container .box-container .tbl-country {
-    border-collapse: collapse;
-    width: 100%;
-    padding-bottom: 10px;
-  }
-  .container .box-container .tbl-global td,
-  .container .box-container .tbl-global th,
-  .container .box-container .tbl-country td,
-  .container .box-container .tbl-country th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  .container .box-container .tbl-global th,
-  .container .box-container .tbl-country th {
-    background-color: crimson;
-    color: #ffffff;
-    font-size: 12px;
-    cursor: pointer;
-  }
 }
 /*# sourceMappingURL=style.css.map */
